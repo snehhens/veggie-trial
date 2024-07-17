@@ -1,8 +1,15 @@
+:root {
+    --main-green: #4CAF50;
+    --light-green: #e8f5e9;
+    --dark-green: #45a049;
+    --text-color: #333;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f5f0;
+    background-color: var(--light-green);
 }
 
 .container {
@@ -12,8 +19,8 @@ body {
 }
 
 header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: var(--light-green);
+    box-shadow: none;
 }
 
 nav {
@@ -26,7 +33,7 @@ nav {
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: var(--main-green);
 }
 
 .nav-links {
@@ -36,12 +43,12 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
+    color: var(--text-color);
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #4CAF50;
+    color: var(--main-green);
 }
 
 .hero {
@@ -62,7 +69,7 @@ nav {
 
 h1 {
     font-size: 48px;
-    color: #333;
+    color: var(--text-color);
     margin-bottom: 20px;
 }
 
@@ -74,7 +81,7 @@ p {
 
 .cta-button {
     display: inline-block;
-    background-color: #4CAF50;
+    background-color: var(--main-green);
     color: white;
     padding: 12px 24px;
     text-decoration: none;
@@ -83,13 +90,13 @@ p {
 }
 
 .cta-button:hover {
-    background-color: #45a049;
+    background-color: var(--dark-green);
 }
 
 .watch-video {
     display: inline-flex;
     align-items: center;
-    color: #333;
+    color: var(--text-color);
     text-decoration: none;
     margin-left: 20px;
 }
@@ -97,4 +104,4 @@ p {
 .watch-video:before {
     content: '►';
     margin-right: 5px;
-  }
+}
