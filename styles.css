@@ -1,7 +1,7 @@
 :root {
-    --main-green: #4CAF50;
-    --light-green: #e8f5e9;
-    --dark-green: #45a049;
+    --primary-color: #4CAF50;
+    --secondary-color: #45a049;
+    --background-color: #f0f8f0;
     --text-color: #333;
 }
 
@@ -9,7 +9,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--light-green);
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 .container {
@@ -18,9 +19,10 @@ body {
     padding: 0 20px;
 }
 
+/* Header styles */
 header {
-    background-color: var(--light-green);
-    box-shadow: none;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 nav {
@@ -33,29 +35,31 @@ nav {
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: var(--main-green);
+    color: var(--primary-color);
 }
 
 .nav-links {
     display: flex;
     gap: 20px;
+    list-style-type: none;
 }
 
-.nav-links a {
+.nav-links a, .nav-icons a {
     text-decoration: none;
     color: var(--text-color);
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-    color: var(--main-green);
+.nav-links a:hover, .nav-icons a:hover {
+    color: var(--primary-color);
 }
 
+/* Hero section */
 .hero {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 50px 0;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
 }
 
 .hero-content {
@@ -67,21 +71,20 @@ nav {
     text-align: right;
 }
 
+.hero-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
 h1 {
     font-size: 48px;
-    color: var(--text-color);
     margin-bottom: 20px;
 }
 
-p {
-    font-size: 18px;
-    color: #666;
-    margin-bottom: 30px;
-}
-
-.cta-button {
+.cta-button, .button {
     display: inline-block;
-    background-color: var(--main-green);
+    background-color: var(--primary-color);
     color: white;
     padding: 12px 24px;
     text-decoration: none;
@@ -89,19 +92,110 @@ p {
     transition: background-color 0.3s ease;
 }
 
-.cta-button:hover {
-    background-color: var(--dark-green);
+.cta-button:hover, .button:hover {
+    background-color: var(--secondary-color);
 }
 
-.watch-video {
-    display: inline-flex;
-    align-items: center;
-    color: var(--text-color);
-    text-decoration: none;
-    margin-left: 20px;
+/* Featured products */
+.featured-products {
+    padding: 50px 0;
 }
 
-.watch-video:before {
-    content: '►';
-    margin-right: 5px;
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
 }
+
+.product-item {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+.product-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Special offers */
+.special-offers {
+    display: flex;
+    gap: 20px;
+    padding: 50px 0;
+}
+
+.offer {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.offer img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Services section */
+.services {
+    background-color: white;
+    padding: 50px 0;
+}
+
+.service-item {
+    text-align: center;
+}
+
+.service-item img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hero, .special-offers {
+        flex-direction: column;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+}
+
+/* Background circles */
+body::before, body::after {
+    content: '';
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgba(76, 175, 80, 0.1);
+    z-index: -1;
+}
+
+body::before {
+    top: -150px;
+    left: -150px;
+}
+
+body::after {
+    bottom: -150px;
+    right: -150px;
+    }
