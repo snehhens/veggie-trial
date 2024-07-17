@@ -3,6 +3,7 @@
     --secondary-color: #45a049;
     --background-color: #f0f8f0;
     --text-color: #333;
+    --light-green: #e8f5e9;
 }
 
 body {
@@ -58,6 +59,7 @@ nav {
 .hero {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 50px 0;
     background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
 }
@@ -82,7 +84,13 @@ h1 {
     margin-bottom: 20px;
 }
 
-.cta-button, .button {
+p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.cta-button {
     display: inline-block;
     background-color: var(--primary-color);
     color: white;
@@ -92,8 +100,21 @@ h1 {
     transition: background-color 0.3s ease;
 }
 
-.cta-button:hover, .button:hover {
+.cta-button:hover {
     background-color: var(--secondary-color);
+}
+
+.watch-video {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.watch-video:before {
+    content: '►';
+    margin-right: 5px;
 }
 
 /* Featured products */
@@ -124,35 +145,41 @@ h1 {
     object-fit: cover;
 }
 
-/* Special offers */
-.special-offers {
+/* New arrivals */
+.new-arrivals {
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
     padding: 50px 0;
 }
 
-.offer {
-    flex: 1;
+.new-arrival-item {
     background-color: white;
-    padding: 20px;
     border-radius: 10px;
-    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
-.offer img {
+.new-arrival-item:hover {
+    transform: translateY(-5px);
+}
+
+.new-arrival-item img {
     width: 100%;
-    border-radius: 5px;
-    margin-bottom: 15px;
+    height: 200px;
+    object-fit: cover;
 }
 
 /* Services section */
 .services {
     background-color: white;
     padding: 50px 0;
+    display: flex;
+    justify-content: space-around;
 }
 
 .service-item {
     text-align: center;
+    flex: 1;
 }
 
 .service-item img {
@@ -170,10 +197,10 @@ footer {
 
 /* Responsive design */
 @media (max-width: 768px) {
-    .hero, .special-offers {
+    .hero, .new-arrivals, .services {
         flex-direction: column;
     }
-    
+
     .nav-links {
         display: none;
     }
