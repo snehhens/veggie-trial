@@ -1,9 +1,9 @@
 // Sample product data
 const products = [
-    { id: 1, name: 'Organic Tomatoes', price: 2.99, image: 'tomatoes.jpg' },
-    { id: 2, name: 'Fresh Spinach', price: 1.99, image: 'spinach.jpg' },
-    { id: 3, name: 'Crisp Lettuce', price: 1.49, image: 'lettuce.jpg' },
-    { id: 4, name: 'Broccoli Bunch', price: 2.49, image: 'broccoli.jpg' }
+    { id: 1, name: 'Organic Tomatoes', price: 2.99, image: 'images/tomatoes.jpg' },
+    { id: 2, name: 'Fresh Spinach', price: 1.99, image: 'images/spinach.jpg' },
+    { id: 3, name: 'Crisp Lettuce', price: 1.49, image: 'images/lettuce.jpg' },
+    { id: 4, name: 'Broccoli Bunch', price: 2.49, image: 'images/broccoli.jpg' }
 ];
 
 // Function to create product HTML
